@@ -1,0 +1,183 @@
+RECURSION
+---------
+
+Types of Recursion :
+1-Tail Recursion.
+2-Head Recursion.
+3-Tree Recursion.
+4-Indirect Recursion.
+5-Nested Recursion.
+
+
+First we must talk about linear recursion :	
+a function that calling it self only one time like : tail & head recursion.
+
+1-Tail Recursion :
+mean that in returning time it has to not perform any thing.
+it do every thing in calling time.
+
+Example :
+
+void fun(int n)
+{
+  if(n>0)
+  {
+    cout<<"FUN\n";
+    fun(n-1);   // if it fun(n-1)+n ---> so it isn`t tail recursion beacuse it add n in returning time.  
+  }
+}
+
+Time Complexity : O(n).
+Sapce Complexity : O(n).
+
+
+
+2-Head Recursion :
+ 
+mean that before calling it han to not perform any thing.
+it do every thing after calling(it do every thing at the time of returning).
+
+Example :
+
+void fun(int n)
+{
+  if(n>0)
+  {
+    fun(n-1); 
+    cout<<"FUN\n";
+  }
+}
+
+Time Complexity : O(n).
+Sapce Complexity : O(n).
+
+3-Tree Recursion :
+
+A function that calling it self more than one time is calling (Tree Recursion).
+
+Example :
+
+void fun(3)
+{
+  if(n>0)
+   {
+     cout<<n<<" ";
+     fun(n-1);
+     fun(n-1);
+   }
+}
+
+output :3 2 1 1 2 1 1
+
+Analyse the calling levelwise :
+if n = 3. 
+so we have four level of calling 
+in 1th level :1 call. //equavelant to 2 power 0
+in 2th level :2 calls.//equavelant to 2 power 1
+in 3th level :4 calls.//equavelant to 2 power 2
+in 4th level :8 calls.//equavelant to 2 power 3
+
+so the number of calling is : 2^0 + 2^1 +2^3 =15 no calls.
+which equavelant to (2^4) -1 = 15.
+so no of calls : (2^(n+1))-1.
+Time Complexity --> O(2^n)exponintial.
+Space Complexity depends on the maximum hight the stack which (n+1).
+Space Complexity --> O(n).
+
+ 
+4-Indirect Recursion :
+there are at least more than one function calling each other recursuvly like :A call B call C call A call B call C and so on.
+
+
+Example :
+#include<iostream>
+using namespace std;
+
+void funA(int n)
+{
+  if(n>0)
+   {
+    cout<<n<<" ";
+    funB(n-1); 
+   }
+}
+void funB(int n)
+{
+ if(n>1)
+  {
+   cout<<n<<" ";
+   funA(n/2);
+  }
+}
+
+int main()
+{
+ funA(20);
+}
+
+output :20 19 9 8 4 3 1
+ 
+Time Complexity : O(n).
+Sapce Complexity : O(n).
+
+
+5-Nested Recursion :
+mean recursive call is taking recursive call as a parameter so this is recursion inside recursion.
+
+
+Example :
+
+int fun(int n)
+{
+ if(n>100)
+  return n-10;
+ else
+  return fun(fun(n+11))
+}
+int main()
+{
+ cout<<fun(95)<<endl;
+}
+
+Trace : fun(95) --> fun(fun(106)) --> fun(96) --> fun(fun(107)) --> fun(97) --> fun(fun(108)) --> fun(98) -->  fun(fun(109)) --> fun(99) --> fun(fun(110)) --> fun(100) --> fun(fun(111)) --> fun(101) --> 91.
+ 
+Output : 91 
+
+note : time complexity cannot be calculated easily in nested recursion it depends on the code.
+Time Complexity(for this code only): O(n).  //functions are calling only one time each other.
+Sapce Complexity : O(n).
+
+
+$Practice problems in recursion :
+1-Sum from 1 to n using recursion.
+2-Factorial using recursion.
+3-Power using recursion.
+4-Taylor series using recursion.
+5-Taylor series using horner`s rule.
+6-Fibonacci series using recursion -memomization.
+7-nCr(Combination) using recursion.
+8-Tower of Hanoi Problem.
+9-Merge sort using recursion.
+10-Binary search using recursion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
