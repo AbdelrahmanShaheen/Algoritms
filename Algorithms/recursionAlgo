@@ -148,7 +148,7 @@ Time Complexity(for this code only): O(n).  //functions are calling only one tim
 Sapce Complexity : O(n).
 
 
-$Practice problems in recursion :
+$Practice these problems in recursion :
 1-Sum from 1 to n using recursion.
 2-Factorial using recursion.
 3-Power using recursion.
@@ -159,25 +159,5 @@ $Practice problems in recursion :
 8-Tower of Hanoi Problem.
 9-Merge sort using recursion.
 10-Binary search using recursion.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+11-Reach Value.
+12-Number of ways.
