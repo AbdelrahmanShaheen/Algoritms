@@ -148,6 +148,71 @@ Time Complexity(for this code only): O(n).  //functions are calling only one tim
 Sapce Complexity : O(n).
 
 
+$problem and its idea :
+
+// Flood Fill...given maze where cells are . or X. You start at 0, 0..how many cells you could reach?
+/*
+..X.
+.X.X
+..X.
+
+...x.
+..x..
+.x...
+x....
+
+
+....X...
+....XXXX
+..X.....
+.X....XX
+..X.X.X.
+..X...X.
+...X..XX
+*/
+
+// A reachable block is called connected components. Each set of positions reachable together are connected component.
+
+
+int cnt = 0;
+void cntReachalbleCells(int r, int c)
+{
+    if( !valid(r, c) || maze[r][c] == 'X' || vis[r][c] == 1)
+		return;		// invalid position or block position
+
+
+	vis[r][c] = 1;	// we just visited it, don't allow any one back to it
+	cnt++;
+
+	// Try the 4 neighbor cells
+	cntReachalbleCells(r, c-1);
+    cntReachalbleCells(r, c+1);
+    cntReachalbleCells(r-1, c);
+    cntReachalbleCells(r+1, c);
+}
+
+
+
+// What about finding number of connected components?
+void cntComponents(int R, int C)
+{
+	int comps = 0;
+
+	for(int i = 0; i < R; ++i)
+	{
+		for(int j = 0; j < C; ++j)
+		{
+			cnt = 0;
+			cntReachalbleCells(i, j);
+
+			if(cnt > 0)
+				comps++;
+		}
+	}
+
+}
+
+
 $Practice these problems in recursion :
 1-Sum from 1 to n using recursion.
 2-Factorial using recursion.
@@ -161,5 +226,6 @@ $Practice these problems in recursion :
 10-Binary search using recursion.
 11-Reach Value.
 12-Number of ways.
-13-maximum path sum in a grid.
-
+13-Maximum path sum in a grid.
+14-GO from start to end.
+15-Flood fill.
