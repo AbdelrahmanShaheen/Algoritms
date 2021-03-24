@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-//Taylor Series : e^x -->  1 + (x/1) + (x/2!) + (x/3!) + (x/4!)+......+n terms.
+//Taylor Series : e^x -->  1 + ((x^1)/1) + ((x^2)/2!) + ((x^3)/3!) + ((x^4)/4!)+......+n terms.
 double e(int x, int n) //first approach 
 {
  static double p=1,f=1;
