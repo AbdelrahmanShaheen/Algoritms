@@ -1,0 +1,39 @@
+# Sorting algo :
+ 1-Bubble
+ 2-Insertion
+ 3-SelectionSort
+ 4-heapSort
+ 5-MergeSort
+ 6-QuickSort
+ 7-treeSort
+ 8-shellSort
+ 9-countSort
+ 10-Bucket/Bin Sort
+ 11-RadixSort
+
+ # Criteria for Analysing :
+ 1-Number of comparison.
+ 2-Number of swaps.
+ 3-Adaptive.
+ 4-Stable.
+ 5-Extra Memory.
+
+ NOTE 1:
+ A sorting algorithm is said to be adaptive, if it takes advantage of already 'sorted' elements in the list that is to be sorted.
+ A non-adaptive algorithm is one which does not take into account the elements which are already sorted.
+ They try to force every single element to be re-ordered to confirm their sortedness.
+
+ For example, Insertion sort is an adaptive sorting algorithm, if input is already sorted then time complexity will be O(n). Therefore If input is nearly sorted then go for insertion sort, though this is not the only parameter to go for Insertion sort over other sorting algorithms.
+ Merge Sort is an “Non-Adaptive” Sorting algorithm, because the order of the elements in the input array doesn’t matter, time complexity will always be O(nlogn).
+
+- Adaptive sorting algorithms:
+ 1. Bubble Sort
+ 2. Insertion Sort
+- Non-adaptive sorting algorithms:
+ 1. Selection Sort
+ 2. Merge Sort
+ 3. Heap Sort
+
+ NOTE 2:
+ A sorting algorithm is said to be stable, if two objects with equal keys appear in the same order in sorted output as they appear in the input array to be sorted.
+ 
